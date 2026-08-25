@@ -51,7 +51,7 @@ A more detailed version of the model is available in [`docs/graph-model.md`](doc
 
 ## Main graph queries
 
-### 1. Connected skills
+### Connected skills
 
 The application can follow:
 
@@ -59,11 +59,11 @@ The application can follow:
 
 This is used to find skills that are connected to the skills required by a career.
 
-### 2. Career recommendations
+### Career recommendations
 
 The application compares careers based on their required skills. Careers with more shared skills receive a higher recommendation score.
 
-### 3. Projects and technologies
+### Projects and technologies
 
 The graph can also follow:
 
@@ -101,30 +101,5 @@ skillpath/
 ├── package.json
 └── README.md
 
-## Hosted Demo
-
-[SkillPath — Live Demo](https://skillpath-cognodb-peach.vercel.app/)
-
-## Screenshots
-
-### Main Career Explorer
-
-![SkillPath main page](docs/main%20page.png)
-
-### Career Details
-
-![Frontend Engineer career details](docs/screenshot-career.png)
-
-### Career Exploration
-
-![Career exploration](docs/screenshot-exploration.png)
-
-## Demo Flow
-
-1. Open the career explorer.
-2. Search for `React`.
-3. Open `Frontend Engineer`.
-4. Show the skills and technologies connected to the career.
-5. Show the `Connected Skills · 2 Hops` section.
-6. Show the recommended careers.
-7. Open another career to explore its connections.
+## Demo Video
+[Watch the SkillPath demo](https://drive.google.com/file/d/1f5eQpxF5AUF4RLNExVv-yTECPJdCnorY/view?usp=drive_link)
