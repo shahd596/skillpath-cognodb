@@ -100,3 +100,31 @@ skillpath/
 ├── .gitignore
 ├── package.json
 └── README.md
+
+## Hosted Demo
+
+[SkillPath — Live Demo](https://skillpath-cognodb-peach.vercel.app/)
+
+## Screenshots
+
+### Main Career Explorer
+
+![SkillPath main page](docs/main%20page.png)
+
+### Career Details
+
+![Frontend Engineer career details](docs/screenshot-career.png)
+
+### Career Exploration
+
+![Career exploration](docs/screenshot-exploration.png)
+
+## Demo Flow
+
+1. Open the career explorer.
+2. Search for `React`.
+3. Open `Frontend Engineer`.
+4. Show the skills and technologies connected to the career.
+5. Show the `Connected Skills · 2 Hops` section.
+6. Show the recommended careers.
+7. Open another career to explore its connections.
