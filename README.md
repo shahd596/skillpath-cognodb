@@ -10,10 +10,10 @@ A relational schema could represent the same facts, but the application would ne
 
 ## Architecture
 
-- **React + TypeScript + Vite** — responsive web UI
-- **Express + TypeScript** — small API layer and error boundary around the database
-- **Neo4j JavaScript driver** — official Bolt client used to connect to CognoDB
-- **CognoDB Cloud** — managed graph database running Cypher over Bolt
+* **React + TypeScript + Vite** — responsive web UI
+* **Express + TypeScript** — small API layer and error boundary around the database
+* **Neo4j JavaScript driver** — official Bolt client used to connect to CognoDB
+* **CognoDB Cloud** — managed graph database running Cypher over Bolt
 
 CognoDB documents that it supports Bolt 5.0–5.4, Cypher and the official Neo4j JavaScript driver, so no custom CognoDB SDK is required. See the official developer guide: https://cognodb.com/developers
 
@@ -23,10 +23,10 @@ CognoDB documents that it supports Bolt 5.0–5.4, Cypher and the official Neo4j
 graph LR
   Career -->|REQUIRES| Skill
   Career -->|USES| Technology
-  Career -->|HAS_PROJECT| Project
-  Career -->|RELATED_TO| Career
-  Skill -->|RELATED_TO| Skill
-  Project -->|BUILT_WITH| Technology
+  Career -->|HAS\_PROJECT| Project
+  Career -->|RELATED\_TO| Career
+  Skill -->|RELATED\_TO| Skill
+  Project -->|BUILT\_WITH| Technology
 ```
 
 Full model notes are in `docs/graph-model.md`.
@@ -35,7 +35,7 @@ Full model notes are in `docs/graph-model.md`.
 
 ### Multi-hop skill exploration
 
-`Career -[:REQUIRES]-> Skill -[:RELATED_TO]-> Skill`
+`Career -\[:REQUIRES]-> Skill -\[:RELATED\_TO]-> Skill`
 
 This is used in the career drawer to expose second-degree skills rather than only listing direct requirements.
 
@@ -45,7 +45,7 @@ The recommendation query finds other careers that share required skills with the
 
 ### Cross-entity project traversal
 
-`Career -[:HAS_PROJECT]-> Project -[:BUILT_WITH]-> Technology`
+`Career -\[:HAS\_PROJECT]-> Project -\[:BUILT\_WITH]-> Technology`
 
 This demonstrates traversal across three entity types and connects abstract career information to concrete projects and tools.
 
@@ -75,24 +75,24 @@ skillpath/
 
 ## Run locally
 
-### 1. Create a CognoDB instance
+### 1\. Create a CognoDB instance
 
 Create a free instance from the CognoDB Cloud console. CognoDB says the free tier requires no credit card and provides a `bolt+s://` connection URI. The password is displayed once, so store it securely.
 
-### 2. Configure secrets
+### 2\. Configure secrets
 
 Copy `.env.example` to `.env` and fill in your credentials:
 
 ```env
-COGNODB_URI=bolt+s://your-instance.databases.cognodb.com
-COGNODB_USERNAME=cognodb
-COGNODB_PASSWORD=your-password
+COGNODB\_URI=bolt+s://your-instance.databases.cognodb.com
+COGNODB\_USERNAME=cognodb
+COGNODB\_PASSWORD=your-password
 PORT=3000
 ```
 
 Never commit `.env`.
 
-### 3. Install and seed
+### 3\. Install and seed
 
 ```bash
 npm install
@@ -101,7 +101,7 @@ npm run seed
 
 The seed script is idempotent for the intended demo dataset by clearing the graph before loading it, which keeps local setup predictable.
 
-### 4. Start development
+### 4\. Start development
 
 ```bash
 npm run dev
@@ -109,7 +109,7 @@ npm run dev
 
 Open `http://localhost:5173`.
 
-### 5. Production build
+### 5\. Production build
 
 ```bash
 npm run build
@@ -136,11 +136,46 @@ The included seed data is intentionally small enough for CognoDB's free tier whi
 6. Show **You May Also Like** and explain that recommendations are calculated from shared graph relationships.
 7. Open a related career to demonstrate that the graph is interactive rather than a static catalog.
 
+## 
+
+## \## Hosted Demo
+
+## 
+
+## \[SkillPath — Live Demo](https://skillpath-cognodb-peach.vercel.app/)
+
+## 
+
+## \## Screenshots
+
+## 
+
+## \### Main Career Explorer
+
+## !\[SkillPath main page](docs/main%20page.png)
+
+## 
+
+## \### Career Details
+
+## !\[Frontend Engineer career details](docs/screenshot-career.png)
+
+## 
+
+## \### Career Exploration
+
+## !\[Career exploration](docs/screenshot-exploration.png)
+
+## 
+
+## 
+
 ## Submission checklist
 
-- [ ] Push the repository to GitHub.
-- [ ] Add the deployed application URL to this README.
-- [ ] Add 2–4 screenshots of the UI to this README.
-- [ ] Record the short demo using the flow above.
-- [ ] Keep the CognoDB instance running until the review is complete.
-- [ ] Email the GitHub repository URL and demo link to `hr@wexa.ai` with subject `CognoDB Assignment 2 – <Your Name>`.
+* \[ ] Push the repository to GitHub.
+* \[ ] Add the deployed application URL to this README.
+* \[ ] Add 2–4 screenshots of the UI to this README.
+* \[ ] Record the short demo using the flow above.
+* \[ ] Keep the CognoDB instance running until the review is complete.
+* \[ ] Email the GitHub repository URL and demo link to `hr@wexa.ai` with subject `CognoDB Assignment 2 – <Your Name>`.
+
