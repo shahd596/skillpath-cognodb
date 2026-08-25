@@ -100,6 +100,26 @@ skillpath/
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+
+## Hosted Demo
+
+[SkillPath — Live Demo](https://skillpath-cognodb-peach.vercel.app/)
+
+## Screenshots
+
+### Main Career Explorer
+
+![SkillPath main page](docs/main%20page.png)
+
+### Career Details
+
+![Frontend Engineer career details](docs/screenshot-career.png)
+
+### Career Exploration
+
+![Career exploration](docs/screenshot-exploration.png)
 
 ## Demo Video
+
 [Watch the SkillPath demo](https://drive.google.com/file/d/1f5eQpxF5AUF4RLNExVv-yTECPJdCnorY/view?usp=drive_link)
