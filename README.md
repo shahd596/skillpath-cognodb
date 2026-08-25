@@ -49,6 +49,20 @@ The main relationships are:
 
 A more detailed version of the model is available in [`docs/graph-model.md`](docs/graph-model.md).
 
+## Graph model
+
+```mermaid
+graph LR
+    Career -->|REQUIRES| Skill
+    Career -->|USES| Technology
+    Career -->|HAS_PROJECT| Project
+    Career -->|RELATED_TO| Career
+    Skill -->|RELATED_TO| Skill
+    Project -->|BUILT_WITH| Technology
+```
+
+The full graph model is also available in `docs/graph-model.md`.
+
 ## Main graph queries
 
 ### Connected skills
@@ -100,6 +114,56 @@ skillpath/
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+
+## Setup and Run
+
+### 1. Create a CognoDB instance
+
+Create a free instance from the CognoDB Cloud console. Choose a region and wait for the instance to finish provisioning.
+
+Copy the Bolt connection URI and generated password. The password should be stored securely and should not be committed to GitHub.
+
+### 2. Configure environment variables
+
+Create a `.env` file in the project root using `.env.example` as a template:
+
+```env
+COGNODB_URI=bolt+s://your-instance.databases.cognodb.cloud
+COGNODB_USERNAME=cognodb
+COGNODB_PASSWORD=your-password
+PORT=3000
+```
+
+Do not commit `.env` to the repository.
+
+### 3. Install dependencies
+
+```
+npm install
+```
+
+### 4. Load the sample graph data
+
+```
+npm run seed
+```
+
+This loads the sample careers, skills, technologies, projects, and their relationships into CognoDB.
+
+### 5. Start the application
+
+```
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+### Production build
+
+```
+npm run build
+npm start
 ```
 
 ## Hosted Demo
